@@ -17,7 +17,6 @@
     // global variables
 
     var guessesLeft = 10;
-    var letterCorrect = false;
 
     // <!-- Code to randomly choose a word (from array)-->
 
@@ -25,7 +24,10 @@
         "gooblygook",
         "atlanta",
         "cerveza",
-        "car"
+        "car",
+        "mandala",
+        "maroon",
+        "telenovela"
     ]
 
     var wordChoice = wordChoices[Math.floor(Math.random() * wordChoices.length)];
@@ -59,6 +61,7 @@
     document.onkeyup = function(event) {
 
     var userInput = event.key.toLowerCase();
+    var lettersCorrect = -1;
 
     if (userInput === "a" || userInput === "b" || userInput === "c" || userInput === "d" || userInput === "e" || userInput === "f" || userInput === "g" || userInput === "h" || userInput === "i" || userInput === "j" || userInput === "k" || userInput === "l" || userInput === "m" || userInput === "n" || userInput === "o" || userInput === "p" || userInput === "q" || userInput === "r" || userInput === "s" || userInput === "t" || userInput === "u" || userInput === "v" || userInput === "x" || userInput === "y" || userInput === "z") {
 
@@ -67,40 +70,44 @@
     for (var z = 0; z<wordChoice.length; z++){
         if (userInput === answerLetter[z]) {
             answer[z] = answerLetter[z];
-            spacesLeft=(spacesLeft-1);
+            spacesLeft=spacesLeft-1;
             console.log(answer);
             console.log(spacesLeft);
-            letterCorrect = true;
+            lettersCorrect++;
         }
 
-        else if (z>=wordChoice.length && letterCorrect==false){
-            var letterIncorrect = true;
-        }
         else{
 
         }
 
     }
 
-    // Answer wrong
+    // Counter for incorrect guess...
 
         }
 
-        if (letterIncorrect==false){
+        if (lettersCorrect>0){
+            guessesLeft=guessesLeft;
             console.log(guessesLeft);
+            console.log(lettersCorrect);
+            lettersCorrect = -1;
+        }
+
+        else if (lettersCorrect<0){
+            guessesLeft=guessesLeft-1;
+            console.log(guessesLeft);
+            lettersCorrect = -1;
         }
 
         else{
 
         }
-     }
  
 
-    // <!-- repeat til lives equal zero or win, then record and print win or losses (make game a function then insert message for replay and run function if they do)-->
+        }
 
-      if(spacesLeft===0){
-        exit();
-    }
+
+    // <!-- repeat til lives equal zero or win, then record and print win or losses (make game a function then insert message for replay and run function if they do)-->
 
 
     </script>
