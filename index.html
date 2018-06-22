@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aaron's Word Game</title>
+</head>
+<body>
+    <!-- Code for header for game -->
+
+    <!-- Code for instructions -->
+
+    <!-- Image (if I choose to do it) for the hangman -->
+
+    <script>
+
+    // global variables
+
+    var guessesLeft = 10;
+    var letterCorrect = false;
+
+    // <!-- Code to randomly choose a word (from array)-->
+
+    var wordChoices = [
+        "gooblygook",
+        "atlanta",
+        "cerveza",
+        "car"
+    ]
+
+    var wordChoice = wordChoices[Math.floor(Math.random() * wordChoices.length)];
+
+    console.log(wordChoice);
+
+    // <!-- Figure length of word and create spaces for user to guess -->
+
+    var answer = [];
+
+    for (var x = 0; x<wordChoice.length; x++){
+        answer[x] = "-";
+    }
+
+    var spacesLeft = wordChoice.length;
+
+    console.log(spacesLeft);
+    console.log(answer);
+
+    // <!-- Assign all the letters in word to an array -->
+
+    var answerLetter = [];
+
+    for (var y = 0; y<wordChoice.length; y++){
+        answerLetter[y] = wordChoice.charAt(y);
+    }
+    console.log(answerLetter);
+
+    // User inputs letter and returns depending on answer
+
+    document.onkeyup = function(event) {
+
+    var userInput = event.key.toLowerCase();
+
+    if (userInput === "a" || userInput === "b" || userInput === "c" || userInput === "d" || userInput === "e" || userInput === "f" || userInput === "g" || userInput === "h" || userInput === "i" || userInput === "j" || userInput === "k" || userInput === "l" || userInput === "m" || userInput === "n" || userInput === "o" || userInput === "p" || userInput === "q" || userInput === "r" || userInput === "s" || userInput === "t" || userInput === "u" || userInput === "v" || userInput === "x" || userInput === "y" || userInput === "z") {
+
+    // Answer correct
+
+    for (var z = 0; z<wordChoice.length; z++){
+        if (userInput === answerLetter[z]) {
+            answer[z] = answerLetter[z];
+            spacesLeft=(spacesLeft-1);
+            console.log(answer);
+            console.log(spacesLeft);
+            letterCorrect = true;
+        }
+
+        else if (z>=wordChoice.length && letterCorrect==false){
+            var letterIncorrect = true;
+        }
+        else{
+
+        }
+
+    }
+
+    // Answer wrong
+
+        }
+
+        if (letterIncorrect==false){
+            console.log(guessesLeft);
+        }
+
+        else{
+
+        }
+     }
+ 
+
+    // <!-- repeat til lives equal zero or win, then record and print win or losses (make game a function then insert message for replay and run function if they do)-->
+
+      if(spacesLeft===0){
+        exit();
+    }
+
+
+    </script>
+
+</body>
+</html>
