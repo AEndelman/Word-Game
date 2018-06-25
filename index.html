@@ -17,6 +17,10 @@
     // global variables
 
     var guessesLeft = 10;
+    var wins;
+    var lettersChosen = [];
+
+
 
     // <!-- Code to randomly choose a word (from array)-->
 
@@ -56,7 +60,7 @@
     }
     console.log(answerLetter);
 
-    // User inputs letter and returns depending on answer
+    // User inputs letter and returns depending on answer (add function)
 
     document.onkeyup = function(event) {
 
@@ -65,14 +69,20 @@
 
     if (userInput === "a" || userInput === "b" || userInput === "c" || userInput === "d" || userInput === "e" || userInput === "f" || userInput === "g" || userInput === "h" || userInput === "i" || userInput === "j" || userInput === "k" || userInput === "l" || userInput === "m" || userInput === "n" || userInput === "o" || userInput === "p" || userInput === "q" || userInput === "r" || userInput === "s" || userInput === "t" || userInput === "u" || userInput === "v" || userInput === "x" || userInput === "y" || userInput === "z") {
 
-    // Answer correct
+        //Push letter to array for what user has guessed
+
+    lettersChosen.push(userInput);
+    console.log(lettersChosen);
+
+        // Answer correct
 
     for (var z = 0; z<wordChoice.length; z++){
-        if (userInput === answerLetter[z]) {
+        if (userInput == answerLetter[z]) {
             answer[z] = answerLetter[z];
-            spacesLeft=spacesLeft-1;
+            spacesLeft = (spacesLeft - 1);
             console.log(answer);
             console.log(spacesLeft);
+            console.log(guessesLeft);
             lettersCorrect++;
         }
 
@@ -82,14 +92,13 @@
 
     }
 
-    // Counter for incorrect guess...
+}
 
-        }
+// Counter for incorrect guess...
 
         if (lettersCorrect>0){
             guessesLeft=guessesLeft;
             console.log(guessesLeft);
-            console.log(lettersCorrect);
             lettersCorrect = -1;
         }
 
@@ -102,14 +111,9 @@
         else{
 
         }
- 
-
-        }
-
-
-    // <!-- repeat til lives equal zero or win, then record and print win or losses (make game a function then insert message for replay and run function if they do)-->
-
-
+        
+    }
+    
     </script>
 
 </body>
