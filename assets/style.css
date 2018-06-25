@@ -1,0 +1,110 @@
+h1{
+    color: black;
+    font-size: 38pt;
+    text-align: center;
+    font-family: 'Mr De Haviland', cursive;
+}
+
+h2{
+    text-align: center;
+    color: black;
+    font-size: 24pt;
+    font-family: 'Kotta One', serif;
+    text-decoration: underline;
+}
+
+#guessbox{
+    margin: auto;
+    text-align: center;
+    border-style: solid;
+    padding: 10px;
+}
+
+h3{
+    color: white;
+    font-family: 'Kotta One', serif;
+    font-size: 2-pt;
+}
+
+#answer{
+    color: black;
+    text-align: center;
+    font-size: 22pt;
+
+}
+
+#guessesLeft{
+    color: white;
+    font-size: 22pt;
+
+}
+
+#wins{
+    color: white;
+    font-size: 22pt;
+    
+}
+
+#losses{
+    color: white;
+    font-size: 22pt;
+}
+
+#lettersChosen{
+    color: white;
+    font-size: 22pt;
+}
+
+#startbutton {
+    font-family: 'Kotta One', serif;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    background-color: #FF4400;
+    display: flex;
+    justify-content: center;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    align-items: center;
+    text-align: center;
+    margin: 20px auto;
+    
+}
+#startbutton:hover {
+    font-family: 'Kotta One', serif;
+    background-color: royalblue;
+    color: white;  
+    text-align: center;
+    margin: 20px auto;  
+}
+
+body {
+    width: 1023px;
+    border-radius: 8px;
+
+}
+
+#content{
+width: 440px;
+height: 555px;
+float: left;
+margin: 10px;
+text-align: center;
+}
+
+#hangman {
+    width: 440px;
+    float: left;
+    height: 555px;
+}
+
+#hangmanbox {
+    height: 555px;
+    float: right;
+    width: 440px;
+    margin: 10px;
+}

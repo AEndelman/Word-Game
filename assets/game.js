@@ -14,16 +14,33 @@ function startGame() {
     var lettersChosen = [];
 
     var wordChoices = [
-        "gooblygook",
-        "atlanta",
-        "cerveza",
-        "car",
-        "mandala",
-        "maroon",
-        "telenovela",
-        "computer",
-        "antifreeze",
-        "napkin"
+        "ROOSEVELT",
+        "LINCOLN",
+        "HARDING",
+        "COOLIDGE",
+        "OBAMA",
+        "TRUMP",
+        "POLK",
+        "FORD",
+        "WASHINGTON",
+        "GARDFIELD",
+        "WILSON",
+        "REAGAN",
+        "JEFFERSON",
+        "ADAMS",
+        "BUSH",
+        "HOOVER",
+        "CARTER",
+        "NIXON",
+        "JOHNSON",
+        "TRUMAN",
+        "TAFT",
+        "HARRISON",
+        "CLEVELAND",
+        "ARTHUR",
+        "HAYES",
+        "BUCHANAN",
+        "MADISON"
     ]
 
     var wordChoice = wordChoices[Math.floor(Math.random() * wordChoices.length)];
@@ -64,8 +81,12 @@ function startGame() {
 
     function lose() {
         if (guessesLeft == 0) {
+            for(v = 0; v<wordChoice.length; v++){
+                answer[v]=answerLetter[v];
+            }
             alert("You Lose!");
             losses = (losses + 1);
+
         }
 
         else { }
@@ -76,11 +97,11 @@ function startGame() {
 
     document.onkeyup = function (event) {
         var letternotUsed = true;
-        var userInput = event.key.toLowerCase();
+        var userInput = event.key.toUpperCase();
         var lettersCorrect = -1;
 
 
-        if (userInput === "a" || userInput === "b" || userInput === "c" || userInput === "d" || userInput === "e" || userInput === "f" || userInput === "g" || userInput === "h" || userInput === "i" || userInput === "j" || userInput === "k" || userInput === "l" || userInput === "m" || userInput === "n" || userInput === "o" || userInput === "p" || userInput === "q" || userInput === "r" || userInput === "s" || userInput === "t" || userInput === "u" || userInput === "v" || userInput === "x" || userInput === "y" || userInput === "z") {
+        if (userInput === "A" || userInput === "B" || userInput === "C" || userInput === "D" || userInput === "E" || userInput === "F" || userInput === "G" || userInput === "H" || userInput === "I" || userInput === "J" || userInput === "K" || userInput === "L" || userInput === "M" || userInput === "N" || userInput === "O" || userInput === "P" || userInput === "Q" || userInput === "R" || userInput === "S" || userInput === "T" || userInput === "U" || userInput === "V" || userInput === "X" || userInput === "Y" || userInput === "Z") {
 
             //call function for if letter used already
             letterUsed();
@@ -141,18 +162,18 @@ function startGame() {
             }
         }
 
-        document.getElementById("answer").innerHTML = answer.join(" ");
+        document.getElementById("answer").innerHTML = answer.join("  ");
         document.getElementById("guessesLeft").innerHTML = guessesLeft;
-        document.getElementById("lettersChosen").innerHTML = lettersChosen.join(" ");
+        document.getElementById("lettersChosen").innerHTML = lettersChosen.join("  ");
         document.getElementById("wins").innerHTML = wins;
         document.getElementById("losses").innerHTML = losses;
         
 
     }
 
-    document.getElementById("answer").innerHTML = answer.join(" ");
+    document.getElementById("answer").innerHTML = answer.join("  ");
     document.getElementById("guessesLeft").innerHTML = guessesLeft;
-    document.getElementById("lettersChosen").innerHTML = lettersChosen.join(" ");
+    document.getElementById("lettersChosen").innerHTML = lettersChosen.join("   ");
     document.getElementById("wins").innerHTML = wins;
     document.getElementById("losses").innerHTML = losses;
 }

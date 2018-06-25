@@ -3,22 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Kotta+One|Mr+De+Haviland" rel="stylesheet">
     <title>Aaron's Word Game</title>
 </head>
 <body>
-        <button onclick="startGame()">Start or Restart Game</button>
-        <div style="background-color:lightblue">
-                <h2>What is the word?</h2>
-                <span id = "answer"></span>
-                <h3>Guesses Left</h3>
+        <h1> P R E S I D E N T I A L - H A N G M A N </h1>
+
+        <div class=buttoncenter>
+        <button id=startbutton onclick="startGame()">Generate a President</button>
+        </div>
+
+        <div id = "guessbox">
+        <h2>GUESS THE PREZ</h2>
+        <span id = "answer"></span>
+        </div>
+
+        <div id = "content" style="background-color:royalblue">
+                <h3>GUESSES LEFT:</h3>
                 <span id = "guessesLeft"></span>
-                <h3>Letters Chosen</h3>
+                <h3>LETTERS USED:</h3>
                 <span id = "lettersChosen"></span>
-                <h3>Wins</h3>
+                <h3>WINS:</h3>
                 <span id = "wins"></span>
-                <h3>Losses</h3>
+                <h3>LOSSES:</h3>
                 <span id = "losses"></span>
-              </div>
+        </div>
+
+        <div id = "hangmanbox">
+        <img id = "hangman" src="assets/hangman.png" alt="hangmanlogo">
+        </div>
+
 </body>
 <script src="assets/game.js"></script>
 </html>
