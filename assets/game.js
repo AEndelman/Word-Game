@@ -9,7 +9,7 @@ function startGame() {
 
     // <!-- Code to randomly choose a word (from array)-->
 
-    var guessesLeft = 5;
+    var guessesLeft = 7;
     var roundTwo = false;
     var lettersChosen = [];
 
@@ -53,10 +53,11 @@ function startGame() {
     console.log(answerLetter);
 
     // win or lose
+
     function win() {
         if (spacesLeft == 0) {
             alert("You Win!");
-            var wins = wins + 1;
+            wins = (wins + 1);
         }
         else { }
     }
@@ -64,7 +65,7 @@ function startGame() {
     function lose() {
         if (guessesLeft == 0) {
             alert("You Lose!");
-            var losses = losses + 1;
+            losses = (losses + 1);
         }
 
         else { }
@@ -111,7 +112,7 @@ function startGame() {
 
             // Counter for incorrect guess...
 
-            if (lettersCorrect > 0 && letternotUsed == true) {
+            if (lettersCorrect >= 0 && letternotUsed == true) {
                 guessesLeft = guessesLeft;
                 console.log(guessesLeft);
                 lettersCorrect = -1;
@@ -125,6 +126,8 @@ function startGame() {
             }
 
         }
+
+        //if letter redundant it doesn't run function
 
         function letterUsed() {
             for (w = 0; w < lettersChosen.length; w++) {
@@ -141,10 +144,15 @@ function startGame() {
         document.getElementById("answer").innerHTML = answer.join(" ");
         document.getElementById("guessesLeft").innerHTML = guessesLeft;
         document.getElementById("lettersChosen").innerHTML = lettersChosen.join(" ");
+        document.getElementById("wins").innerHTML = wins;
+        document.getElementById("losses").innerHTML = losses;
+        
 
     }
 
     document.getElementById("answer").innerHTML = answer.join(" ");
     document.getElementById("guessesLeft").innerHTML = guessesLeft;
     document.getElementById("lettersChosen").innerHTML = lettersChosen.join(" ");
+    document.getElementById("wins").innerHTML = wins;
+    document.getElementById("losses").innerHTML = losses;
 }
